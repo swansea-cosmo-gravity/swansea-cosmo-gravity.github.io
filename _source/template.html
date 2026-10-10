@@ -1,0 +1,247 @@
+<title>Theoretical Cosmology and Gravity</title>
+<meta name="description" content="Theoretical Cosmology and Gravity group at Swansea University: early Universe, dark energy and dark matter, gravitational waves and string theory. Group seminars, people and opportunities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Young+Serif&display=swap">
+<style>
+{{SHARED_CSS}}
+
+/* Group page: same system as the personal pages, with a deep blue accent instead of rosa mexicano. */
+:root { --accent: #2747A8; --accent-soft: #E4EAFA; --warm: #B3105F; --warm-soft: #FBE4EF; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --accent: #93AAFF; --accent-soft: #1B2449; --warm: #FF63AC; --warm-soft: #3B1630; }
+}
+:root[data-theme="dark"] { --accent: #93AAFF; --accent-soft: #1B2449; --warm: #FF63AC; --warm-soft: #3B1630; }
+
+.faculty { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.fac { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.2rem 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; }
+.fac h3 { font-family: var(--font-display); font-weight: 400; font-size: var(--step-1); }
+.fac p { color: var(--muted); font-size: 0.93rem; flex: 1; }
+.fac .go { font-weight: 500; text-decoration: none; }
+.fac .go:hover { text-decoration: underline; }
+
+.areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2.5rem; max-width: 52rem; }
+.areas h3 { font-size: 1rem; font-weight: 600; }
+.areas p { color: var(--muted); font-size: 0.95rem; margin-top: 0.2rem; }
+
+.next { margin-top: 2rem; max-width: 40rem; border-left: 3px solid var(--accent); padding: 0.2rem 0 0.2rem 1rem; display: grid; gap: 0.15rem; }
+.next .label { font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+.next .who { font-weight: 600; }
+.next .meta { color: var(--muted); font-size: 0.92rem; }
+
+.slot { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; color: var(--muted); }
+.slot b { color: var(--ink); font-weight: 600; }
+.talks { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-width: 50rem; }
+.talk { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding-block: 0.75rem; border-top: 1px solid var(--line); }
+.talk:first-child { border-top: 0; }
+.talk .when { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+.talk .who { font-weight: 600; }
+.talk .aff { color: var(--muted); font-weight: 400; }
+.talk .title { display: block; font-style: italic; }
+.talk .title.tba { font-style: normal; color: var(--muted); font-size: 0.9rem; }
+.talk .tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 4px; padding: 0.05rem 0.35rem; margin-left: 0.4rem; color: var(--muted); white-space: nowrap; }
+.talk .tag.up { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.talk a.paper { font-size: 0.85rem; margin-left: 0.4rem; }
+.upcoming-box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.6rem 1.25rem; max-width: 50rem; }
+.year { border-top: 1px solid var(--line); padding-top: 0.8rem; max-width: 50rem; }
+.year summary { cursor: pointer; font-family: var(--font-display); font-size: var(--step-1); padding-block: 0.3rem; }
+.year summary .count { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin-left: 0.4rem; }
+.empty { color: var(--muted); }
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; max-width: 52rem; }
+.gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.gallery img.wide { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+
+@media (max-width: 900px) { .faculty { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) { .areas { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .talk { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="bar-name" href="#top">Cosmology &amp; Gravity · Swansea</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#faculty">Faculty</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#people">People</a></li>
+        <li><a href="#seminars">Seminars</a></li>
+        <li><a href="#join">Join us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Swansea University · Centre for Quantum Fields and Gravity</p>
+      <h1>Theoretical Cosmology and Gravity</h1>
+      <svg class="chirp" viewBox="0 0 560 46" aria-hidden="true" focusable="false"><path d="{{CHIRP}}"/></svg>
+      <p class="lede">We are theoretical physicists working on the early Universe, dark energy and dark matter, and gravitational waves, and on the fundamental theories behind them, from quantum fields in curved spacetime to string theory.</p>
+      <div class="cta">
+        <a class="btn primary" href="#seminars">Group seminars</a>
+        <a class="btn ghost" href="#join">Join us</a>
+      </div>
+      {{NEXT_TALK}}
+    </div>
+    <figure class="portrait">
+      <div class="collage">
+        <img src="{{IMG:dinner-oct-2025.jpg}}" alt="Group dinner with visiting students, October 2025">
+        <img src="{{IMG:dinner-aug-2025.jpg}}" alt="Group dinner, August 2025">
+        <img src="{{IMG:dinner-indian.jpg}}" alt="Group dinner in Swansea" style="object-position: 50% 40%">
+      </div>
+      <figcaption>The group in Swansea</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block" id="faculty">
+  <div class="wrap">
+    <div class="rail"><h2>Faculty</h2></div>
+    <div class="body">
+      <div class="faculty">
+{{FACULTY}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="research">
+  <div class="wrap">
+    <div class="rail"><h2>Research</h2></div>
+    <div class="body">
+      <div class="areas">
+        <div><h3>The early Universe</h3><p>Inflation and its multifield and string-theory realisations, quantum fields in de Sitter space, primordial black holes and the origin of matter.</p></div>
+        <div><h3>Dark energy and dark matter</h3><p>Quintessence and coupled dark sectors, dark matter production, and testing models against the newest cosmological data with Bayesian and machine-learning methods.</p></div>
+        <div><h3>Gravitational waves</h3><p>Primordial and stochastic backgrounds and how to detect them: pulsar timing arrays, astrometry, LISA, the Einstein Telescope, the SKA and new quantum-sensing detectors.</p></div>
+        <div><h3>Strings, fields and gravity</h3><p>String compactifications and phenomenology, supergravity, modified gravity and black holes, and what quantum gravity implies for cosmology.</p></div>
+      </div>
+      <p class="prose">We are part of the Centre for Quantum Fields and Gravity, the theory group of the Physics Department, which runs a weekly <a href="https://www-pyseminar-rd4n.azurewebsites.net/">theory seminar</a>. For papers, see each faculty member’s page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="people">
+  <div class="wrap">
+    <div class="rail"><h2>People</h2></div>
+    <div class="body">
+      <div class="people">
+{{PEOPLE}}
+      </div>
+      <div class="gallery">
+        <img class="wide" src="{{IMG:dinner-oct-2025-visit.jpg}}" alt="Group dinner during a visit, October 2025">
+        <img src="{{IMG:dinner-long-table.jpg}}" alt="Group dinner around a long table">
+        <img src="{{IMG:dinner-italian.jpg}}" alt="Group dinner in Swansea">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="seminars">
+  <div class="wrap">
+    <div class="rail"><h2>Group seminars</h2></div>
+    <div class="body">
+      <div class="slot"><span><b>{{SLOT}}</b></span><span>Talks by visitors and group members, plus journal clubs. Everyone is welcome.</span></div>
+      <div>
+        <h3 class="sub-h">Upcoming</h3>
+        <div class="upcoming-box"><ol class="talks" id="upcoming">{{UPCOMING}}</ol></div>
+      </div>
+      <div>
+        <h3 class="sub-h">Programme by academic year</h3>
+{{YEARS}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="rail"><h2>Join us</h2></div>
+    <div class="body">
+      <div class="prose">
+        <p>We welcome PhD students, postdocs and visitors interested in cosmology, gravitational waves and string theory. When we have funded positions we advertise them on <a href="https://inspirehep.net/jobs">INSPIRE Jobs</a>.</p>
+        <p>We are also glad to host researchers who bring their own funding, and to help strong candidates prepare fellowship applications with Swansea as host. Contact the faculty member whose work is closest to yours, ideally a few months before the deadline.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3 class="sub-h">PhD students</h3>
+          <ul class="plain-list">
+            <li>STFC-funded PhD studentships at Swansea</li>
+            <li>Bell Burnell Graduate Scholarship Fund (Institute of Physics)</li>
+            <li>Scholarships for international students, for example:
+              <ul class="plain-list nested">
+                <li><a href="https://www.onassis.org/open-calls-past/onassis-foundation-scholarships-call-for-the-academic-year-2026-27">Onassis Foundation Scholarships</a> (Greece)</li>
+                <li><a href="https://www.inlaksfoundation.org/">Inlaks Shivdasani Foundation Scholarships</a> (India)</li>
+                <li><a href="https://cscuk.fcdo.gov.uk/">Commonwealth Scholarships</a> (Commonwealth countries)</li>
+                <li><a href="https://secihti.mx/becas-al-extranjero/">SECIHTI scholarships for study abroad</a> (Mexico)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub-h">Postdocs and fellows</h3>
+          <ul class="plain-list">
+            <li>Marie Skłodowska-Curie Postdoctoral Fellowships</li>
+            <li>STFC Ernest Rutherford Fellowships</li>
+            <li>Royal Society University Research and Newton International Fellowships</li>
+            <li>Leverhulme Early Career Fellowships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="rail"><h2>Contact</h2></div>
+    <div class="body">
+      <div class="contact">
+        <div>
+          <h3 class="sub-h">Address</h3>
+          <address>Department of Physics<br>Swansea University, Singleton Park<br>Swansea SA2 8PP, UK</address>
+        </div>
+        <div>
+          <h3 class="sub-h">Faculty pages</h3>
+          <ul class="link-list">
+{{FACULTY_LINKS}}
+            <li><a href="https://www-pyseminar-rd4n.azurewebsites.net/">Swansea theory seminar</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Theoretical Cosmology and Gravity · Swansea University</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Keep "Upcoming" honest after the build date: drop talks that have passed and tag future ones.
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  function d(el) { return new Date(el.getAttribute('data-date') + 'T23:59:59'); }
+  var up = document.getElementById('upcoming');
+  if (up) {
+    Array.prototype.forEach.call(up.querySelectorAll('.talk'), function (li) { if (d(li) < today) li.remove(); });
+    if (!up.querySelector('.talk')) up.innerHTML = '<li class="empty">The next programme will appear here soon.</li>';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.year .talk'), function (li) {
+    var tag = li.querySelector('.tag.up');
+    if (tag && d(li) < today) tag.remove();
+  });
+  var next = document.getElementById('next-talk');
+  if (next && d(next) < today) next.hidden = true;
+})();
+</script>

@@ -1,5 +1,5 @@
-<title>Theoretical Cosmology and Gravity</title>
-<meta name="description" content="Theoretical Cosmology and Gravity group at Swansea University: early Universe, dark energy and dark matter, gravitational waves and string theory. Group seminars, people and opportunities.">
+<title>Cosmology & Gravity @ Swansea</title>
+<meta name="description" content="Cosmology & Gravity @ Swansea, a research group at Swansea University: early Universe, dark energy and dark matter, gravitational waves and string theory. Group seminars, people and opportunities.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Young+Serif&display=swap">
@@ -47,6 +47,10 @@
 .year summary { cursor: pointer; font-family: var(--font-display); font-size: var(--step-1); padding-block: 0.3rem; }
 .year summary .count { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin-left: 0.4rem; }
 .empty { color: var(--muted); }
+.swansea { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; max-width: 52rem; }
+.swansea img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 8px; }
+.swansea figcaption { grid-column: 1 / -1; font-size: var(--step--1); color: var(--muted); }
+@media (max-width: 520px) { .swansea { grid-template-columns: minmax(0, 1fr); } }
 .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; max-width: 52rem; }
 .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
 .gallery img.wide { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
@@ -60,7 +64,7 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="bar-name" href="#top">Cosmology &amp; Gravity · Swansea</a>
+    <a class="bar-name" href="#top">Cosmology &amp; Gravity @ Swansea</a>
     <nav aria-label="Sections">
       <ul>
         <li><a href="#faculty">Faculty</a></li>
@@ -80,9 +84,9 @@
   <div class="wrap">
     <div>
       <p class="eyebrow">Swansea University · Centre for Quantum Fields and Gravity</p>
-      <h1>Theoretical Cosmology and Gravity</h1>
+      <h1>Cosmology &amp; Gravity @ Swansea</h1>
       <svg class="chirp" viewBox="0 0 560 46" aria-hidden="true" focusable="false"><path d="{{CHIRP}}"/></svg>
-      <p class="lede">We are theoretical physicists working on the early Universe, dark energy and dark matter, and gravitational waves, and on the fundamental theories behind them, from quantum fields in curved spacetime to string theory.</p>
+      <p class="lede">Our research group explores fundamental questions in cosmology and gravity, from the early Universe to dark energy, dark matter, and gravitational waves. Our work connects theoretical ideas, ranging from quantum field theory in curved spacetime to string theory, with observational opportunities. We are actively involved in major international collaborations, including LISA, NANOGrav, SKAO, Einstein Telescope, and Euclid.</p>
       <div class="cta">
         <a class="btn primary" href="#seminars">Group seminars</a>
         <a class="btn ghost" href="#join">Join us</a>
@@ -121,6 +125,16 @@
         <div><h3>Gravitational waves</h3><p>Primordial and stochastic backgrounds and how to detect them: pulsar timing arrays, astrometry, LISA, the Einstein Telescope, the SKA and new quantum-sensing detectors.</p></div>
         <div><h3>Strings, fields and gravity</h3><p>String compactifications and phenomenology, supergravity, modified gravity and black holes, and what quantum gravity implies for cosmology.</p></div>
       </div>
+      <div>
+        <h3 class="sub-h">Collaborations</h3>
+        <ul class="collabs">
+          <li><a href="https://www.lisamission.org/">LISA</a></li>
+          <li><a href="https://nanograv.org/">NANOGrav</a></li>
+          <li><a href="https://www.skao.int/en">SKAO</a></li>
+          <li><a href="https://einsteintelescope.eu/">Einstein Telescope</a></li>
+          <li><a href="https://www.euclid-ec.org/">Euclid</a></li>
+        </ul>
+      </div>
       <p class="prose">We are part of the Centre for Quantum Fields and Gravity, the theory group of the Physics Department, which runs a weekly <a href="https://www-pyseminar-rd4n.azurewebsites.net/">theory seminar</a>. For papers, see each faculty member’s page.</p>
     </div>
   </div>
@@ -134,7 +148,6 @@
 {{PEOPLE}}
       </div>
       <div class="gallery">
-        <img class="wide" src="{{IMG:birthday-daniele-2025.jpg}}" alt="Celebrating Daniele's birthday with the group, June 2025">
         <img class="wide" src="{{IMG:dinner-italian.jpg}}" alt="Group dinner in Swansea">
       </div>
     </div>
@@ -162,6 +175,11 @@
   <div class="wrap">
     <div class="rail"><h2>Join us</h2></div>
     <div class="body">
+      <figure class="swansea">
+        <img src="{{IMG:swansea-bay.jpg}}" alt="Aerial view of Swansea Bay and the city">
+        <img src="{{IMG:rhossili-gower.jpg}}" alt="A surfer above Rhossili Bay on the Gower Peninsula">
+        <figcaption>Swansea sits on a five-mile bay, minutes from the beaches of the Gower Peninsula, the UK’s first Area of Outstanding Natural Beauty.</figcaption>
+      </figure>
       <div class="prose">
         <p>We welcome PhD students, postdocs and visitors interested in cosmology, gravitational waves and string theory. When we have funded positions we advertise them on <a href="https://inspirehep.net/jobs">INSPIRE Jobs</a>.</p>
         <p>We are also glad to host researchers who bring their own funding, and to help strong candidates prepare fellowship applications with Swansea as host. Contact the faculty member whose work is closest to yours, ideally a few months before the deadline.</p>
@@ -221,7 +239,7 @@
 
 <footer>
   <div class="wrap">
-    <span>Theoretical Cosmology and Gravity · Swansea University</span>
+    <span>Cosmology &amp; Gravity @ Swansea · Swansea University</span>
     <a href="#top">Back to top</a>
   </div>
 </footer>

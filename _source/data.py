@@ -27,7 +27,7 @@ SEMINARS = [
     ("2026-02-18", "Ameek Malhotra", "Swansea", "", "", ""),
     ("2026-02-25", "Gabriele Demasi", "University of Florence", "", "", "https://arxiv.org/abs/2601.02336"),
     ("2026-03-04", "Suddhasattwa Brahma", "", "", "", ""),
-    ("2026-03-11", "Paola Carolina Moreira Delgado", "CEICO, Prague", "", "Theory seminar", ""),
+    ("2026-03-11", "Paola Carolina Moreira Delgado", "CEICO, Prague", "", "", ""),
     ("2026-03-18", "Despoina Farakou", "Prague", "Symbolic Regression for EFTofLSS", "", ""),
     ("2026-04-08", "Giulia Borghetto and Saba Rahimy", "Swansea", "", "BritGrav practice talks", ""),
     ("2026-05-13", "Chandra Prakash", "", "Cosmological Correlators from the Inflation End to CMB Sky via Reheating", "", ""),

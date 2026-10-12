@@ -89,8 +89,11 @@ def build():
                      else f'<li><span class="soon">{E(name)}</span> <span class="soon-tag">coming soon</span></li>')
 
     def group(title, rows):
-        lis = "".join(f'<li><span class="name">{E(n)}</span>' + (f'<span class="note">{E(x)}</span>' if x else "") + "</li>"
-                      for n, x in rows)
+        def li(row):
+            n, x, url = (row + ("",))[:3]
+            name = f'<a class="name" href="{E(url)}">{E(n)}</a>' if url else f'<span class="name">{E(n)}</span>'
+            return f"<li>{name}" + (f'<span class="note">{E(x)}</span>' if x else "") + "</li>"
+        lis = "".join(li(r) for r in rows)
         return f'<div><h3 class="sub-h">{E(title)}</h3><ul>{lis}</ul></div>'
     people = "\n".join([
         group("PhD students", data.PHD_CURRENT),

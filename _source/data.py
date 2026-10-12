@@ -27,7 +27,7 @@ SEMINARS = [
     ("2026-02-18", "Ameek Malhotra", "Swansea", "", "", ""),
     ("2026-02-25", "Gabriele Demasi", "University of Florence", "", "", "https://arxiv.org/abs/2601.02336"),
     ("2026-03-04", "Suddhasattwa Brahma", "", "", "", ""),
-    ("2026-03-11", "Alex Jenkins and Paola Carolina Moreira Delgado", "", "", "Theory seminar", ""),
+    ("2026-03-11", "Paola Carolina Moreira Delgado", "CEICO, Prague", "", "Theory seminar", ""),
     ("2026-03-18", "Despoina Farakou", "Prague", "Symbolic Regression for EFTofLSS", "", ""),
     ("2026-04-08", "Giulia Borghetto and Saba Rahimy", "Swansea", "", "BritGrav practice talks", ""),
     ("2026-05-13", "Chandra Prakash", "", "Cosmological Correlators from the Inflation End to CMB Sky via Reheating", "", ""),
@@ -65,10 +65,10 @@ PHD_CURRENT = [
     ("Lucas Vicente García-Consuegra", "Based at King’s College London"),
 ]
 POSTDOCS_FORMER = [
-    ("Ameek Malhotra", "2023 – 2026"),
-    ("Debika Chowdhury", "2020 – 2023"),
-    ("Ogan Özsoy", "2017 – 2019"),
-    ("Javier Chagoya", "2016 – 2018, CONACyT postdoctoral fellow"),
+    ("Ameek Malhotra", "2023 – 2026", "https://inspirehep.net/authors/1844728"),
+    ("Debika Chowdhury", "2020 – 2023", "https://inspirehep.net/authors/1958930"),
+    ("Ogan Özsoy", "2017 – 2019", "https://inspirehep.net/authors/1297330"),
+    ("Javier Chagoya", "2016 – 2018, CONACyT postdoctoral fellow", "https://inspirehep.net/authors/1333349"),
 ]
 PHD_FORMER = [
     ("Marisol Jiménez Cruz", "PhD 2026"),
@@ -86,6 +86,6 @@ VISITING = [
     ("Martina La Rosa", "Master's student, University of Bologna, 2025"),
     ("Martina Ciprini", "Master's student, University of Bologna, 2025"),
     ("Maria Lucia Marcelli", "Master's student, University of Bologna, 2025"),
-    ("Flavio C. Sánchez", "Master's student, Mexico, 2025"),
+    ("Flavio C. Sánchez", "Master's student, Universidad Autónoma de Zacatecas, Mexico, 2025"),
     ("Yessenia Olguín-Trejo", "PhD student, IF-UNAM, Mexico, 2018"),
 ]

@@ -258,7 +258,21 @@
     var tag = li.querySelector('.tag.up');
     if (tag && d(li) < today) tag.remove();
   });
+  // "Next group seminar" box: always show the first talk still to come
   var next = document.getElementById('next-talk');
-  if (next && d(next) < today) next.hidden = true;
+  if (next) {
+    var first = up && up.querySelector('.talk');
+    if (!first) { next.hidden = true; }
+    else if (first.getAttribute('data-date') !== next.getAttribute('data-date')) {
+      var who = first.querySelector('.who'), aff = first.querySelector('.aff');
+      var affText = aff ? aff.textContent.replace(/^\s*·\s*/, '') : '';
+      var when = new Date(first.getAttribute('data-date') + 'T12:00:00')
+        .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      var slot = next.querySelector('.meta').textContent.split(' · ').slice(1).join(' · ');
+      next.querySelector('.who').textContent = who.textContent + (affText ? ' (' + affText + ')' : '');
+      next.querySelector('.meta').textContent = when + (slot ? ' · ' + slot : '');
+      next.setAttribute('data-date', first.getAttribute('data-date'));
+    }
+  }
 })();
 </script>

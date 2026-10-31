@@ -28,6 +28,8 @@
 .next .label { font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
 .next .who { font-weight: 600; }
 .next .meta { color: var(--muted); font-size: 0.92rem; }
+.next.hiring { margin-top: 1.1rem; }
+.next.hiring a.who { color: inherit; }
 
 .slot { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; color: var(--muted); }
 .slot b { color: var(--ink); font-weight: 600; }
@@ -92,6 +94,7 @@
         <a class="btn ghost" href="#join">Join us</a>
       </div>
       {{NEXT_TALK}}
+      {{HIRING}}
     </div>
     <figure class="portrait">
       <div class="collage">
@@ -175,6 +178,7 @@
   <div class="wrap">
     <div class="rail"><h2>Join us</h2></div>
     <div class="body">
+      {{POSITIONS}}
       <figure class="swansea">
         <img src="{{IMG:swansea-bay.jpg}}" alt="Aerial view of Swansea Bay and the city">
         <img src="{{IMG:rhossili-gower.jpg}}" alt="A surfer above Rhossili Bay on the Gower Peninsula">

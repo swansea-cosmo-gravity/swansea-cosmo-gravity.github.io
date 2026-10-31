@@ -48,6 +48,12 @@ SEMINARS = [
 
 SEMINAR_SLOT = "Wednesdays at 15:30, Room 619, Vivian Tower"
 
+# ---------------------------------------------------------------- open positions
+# (title, url, deadline) - deadline ISO date or ""; past deadlines are hidden automatically
+POSITIONS = [
+    ("Short-term postdoctoral position", "https://inspirehep.net/jobs/3219202", ""),
+]
+
 # ---------------------------------------------------------------- people
 FACULTY = [  # alphabetical by surname
     ("Azadeh Maleknejad", "Quantum fields in cosmology, particle cosmology and gravitational waves, including quantum sensing for new detectors.", "https://azadeh-maleknejad.pages.dev/"),

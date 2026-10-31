@@ -102,11 +102,26 @@ def build():
         group("Visiting students", data.VISITING),
     ])
 
+    open_pos = [p for p in getattr(data, "POSITIONS", []) if not p[2] or dt.date.fromisoformat(p[2]) >= TODAY]
+    if open_pos:
+        items = "".join(
+            f'<li data-deadline="{E(dl)}"><a href="{E(url)}">{E(t)}</a>'
+            + (f' <span class="note">Deadline {fmt_date(dl)}</span>' if dl else "") + "</li>"
+            for t, url, dl in open_pos)
+        positions_html = (f'<div class="callout" id="positions"><h3>Open positions</h3>'
+                          f'<ul class="plain-list">{items}</ul>'
+                          f'<p>Full details and how to apply are in the advert on INSPIRE.</p></div>')
+        hiring_html = ('<div class="next hiring"><span class="label">We are hiring</span>'
+                       + "".join(f'<a class="who" href="{E(url)}">{E(t)}</a>' for t, url, dl in open_pos)
+                       + '<span class="meta"><a href="#positions">More in Join us</a></span></div>')
+    else:
+        positions_html = hiring_html = ""
+
     page = (HERE / "template.html").read_text()
     for k, v in {
         "{{SHARED_CSS}}": shared_css, "{{CHIRP}}": background_path(), "{{NEXT_TALK}}": next_html,
         "{{FACULTY}}": "\n".join(fac_html), "{{FACULTY_LINKS}}": "\n".join(links), "{{PEOPLE}}": people,
-        "{{SLOT}}": E(data.SEMINAR_SLOT), "{{UPCOMING}}": up_html, "{{YEARS}}": "\n".join(year_html),
+        "{{SLOT}}": E(data.SEMINAR_SLOT), "{{POSITIONS}}": positions_html, "{{HIRING}}": hiring_html, "{{UPCOMING}}": up_html, "{{YEARS}}": "\n".join(year_html),
     }.items():
         page = page.replace(k, v)
 

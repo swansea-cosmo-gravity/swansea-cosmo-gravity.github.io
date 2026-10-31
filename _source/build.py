@@ -106,14 +106,16 @@ def build():
     if open_pos:
         items = "".join(
             f'<li data-deadline="{E(dl)}"><a href="{E(url)}">{E(t)}</a>'
-            + (f' <span class="note">Deadline {fmt_date(dl)}</span>' if dl else "") + "</li>"
+            + (f' <span class="note">· Deadline {fmt_date(dl)}</span>' if dl else "") + "</li>"
             for t, url, dl in open_pos)
-        positions_html = (f'<div class="callout" id="positions"><h3>Open positions</h3>'
+        dls = [p[2] for p in open_pos]
+        last = max(dls) if all(dls) else ""
+        positions_html = (f'<div class="callout" id="positions" data-deadline="{last}"><h3>Open positions</h3>'
                           f'<ul class="plain-list">{items}</ul>'
                           f'<p>Full details and how to apply are in the advert on INSPIRE.</p></div>')
-        hiring_html = ('<div class="next hiring"><span class="label">We are hiring</span>'
-                       + "".join(f'<a class="who" href="{E(url)}">{E(t)}</a>' for t, url, dl in open_pos)
-                       + '<span class="meta"><a href="#positions">More in Join us</a></span></div>')
+        hiring_html = (f'<div class="next hiring" data-deadline="{last}"><span class="label">We are hiring</span>'
+                       + "".join(f'<a class="who" href="{E(url)}" data-deadline="{E(dl)}">{E(t)}</a>' for t, url, dl in open_pos)
+                       + '<span class="meta">' + (f'Deadline {fmt_date(last)} · ' if last else '') + '<a href="#positions">More in Join us</a></span></div>')
     else:
         positions_html = hiring_html = ""
 

@@ -250,6 +250,14 @@
 
 <script>
 (function () {
+  // Hide job adverts once their deadline (inclusive) has passed.
+  var d = new Date(), today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  document.querySelectorAll('[data-deadline]').forEach(function (el) {
+    var dl = el.getAttribute('data-deadline');
+    if (dl && today > dl) el.remove();
+  });
+})();
+(function () {
   // Keep "Upcoming" honest after the build date: drop talks that have passed and tag future ones.
   var today = new Date(); today.setHours(0, 0, 0, 0);
   function d(el) { return new Date(el.getAttribute('data-date') + 'T23:59:59'); }

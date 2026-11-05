@@ -102,20 +102,25 @@ def build():
         group("Visiting students", data.VISITING),
     ])
 
-    open_pos = [p for p in getattr(data, "POSITIONS", []) if not p[2] or dt.date.fromisoformat(p[2]) >= TODAY]
+    open_pos = [(p + ("",))[:4] for p in getattr(data, "POSITIONS", [])]
+    open_pos = [p for p in open_pos if not p[2] or dt.date.fromisoformat(p[2]) >= TODAY]
     if open_pos:
+        def extra(dl, note):
+            bits = ([note] if note else []) + ([f"Deadline {fmt_date(dl)}"] if dl else [])
+            return " · ".join(bits)
         items = "".join(
             f'<li data-deadline="{E(dl)}"><a href="{E(url)}">{E(t)}</a>'
-            + (f' <span class="note">· Deadline {fmt_date(dl)}</span>' if dl else "") + "</li>"
-            for t, url, dl in open_pos)
+            + (f' <span class="note">· {E(extra(dl, note))}</span>' if extra(dl, note) else "") + "</li>"
+            for t, url, dl, note in open_pos)
         dls = [p[2] for p in open_pos]
         last = max(dls) if all(dls) else ""
         positions_html = (f'<div class="callout" id="positions" data-deadline="{last}"><h3>Open positions</h3>'
                           f'<ul class="plain-list">{items}</ul>'
-                          f'<p>Full details and how to apply are in the advert on INSPIRE.</p></div>')
+                          f'<p>Full details and how to apply are in the adverts on INSPIRE.</p></div>')
         hiring_html = (f'<div class="next hiring" data-deadline="{last}"><span class="label">We are hiring</span>'
-                       + "".join(f'<a class="who" href="{E(url)}" data-deadline="{E(dl)}">{E(t)}</a>' for t, url, dl in open_pos)
-                       + '<span class="meta">' + (f'Deadline {fmt_date(last)} · ' if last else '') + '<a href="#positions">More in Join us</a></span></div>')
+                       + "".join(f'<span class="job" data-deadline="{E(dl)}"><a class="who" href="{E(url)}">{E(t)}</a>'
+                                 f'<span class="meta">{E(extra(dl, note))}</span></span>' for t, url, dl, note in open_pos)
+                       + '<span class="meta"><a href="#positions">More in Join us</a></span></div>')
     else:
         positions_html = hiring_html = ""
 

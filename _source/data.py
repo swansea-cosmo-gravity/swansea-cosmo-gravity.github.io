@@ -49,9 +49,10 @@ SEMINARS = [
 SEMINAR_SLOT = "Wednesdays at 15:30, Room 619, Vivian Tower"
 
 # ---------------------------------------------------------------- open positions
-# (title, url, deadline) - deadline ISO date or ""; past deadlines are hidden automatically
+# (title, url, deadline, note) - deadline ISO date or ""; past deadlines are hidden automatically
 POSITIONS = [
-    ("Short-term postdoctoral position in theoretical cosmology", "https://inspirehep.net/jobs/3219202", "2026-11-08"),
+    ("Short-term postdoctoral position in theoretical cosmology", "https://inspirehep.net/jobs/3219202", "2026-11-08", ""),
+    ("Postdoctoral position in Gravitational Wave Cosmology", "https://inspirehep.net/jobs/3222646", "2026-12-06", "2 years"),
 ]
 
 # ---------------------------------------------------------------- people

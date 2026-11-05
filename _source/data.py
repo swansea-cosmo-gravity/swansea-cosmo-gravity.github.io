@@ -2,7 +2,8 @@
 # Edit here, then run build.py. Dates are ISO (YYYY-MM-DD).
 
 # ---------------------------------------------------------------- seminars
-# (date, speaker, affiliation, title, note, link)
+# (date, speaker, affiliation, title, note, link[, time and place])
+#   time and place: only when different from SEMINAR_SLOT, e.g. "14:00, Glyndŵr E"
 #   note: "" or e.g. "Journal club", "Theory seminar"
 #   link: "" or a URL to a paper/slides
 SEMINARS = [
@@ -12,7 +13,7 @@ SEMINARS = [
     ("2026-10-21", "Ginevra Braga", "L’Aquila", "GW lensing 2", "", ""),
     ("2026-10-28", "Reginald Bernardo", "Hannover", "PTA", "", ""),
     ("2026-11-11", "Paolo Arnaudo", "Southampton", "OPE = QNM", "", ""),
-    ("2026-11-18", "Benjamin Muntz", "University of Nottingham", "", "Theory seminar", ""),
+    ("2026-11-18", "Benjamin Muntz", "University of Nottingham", "", "Theory seminar", "", "14:00, Glyndŵr E"),
 
     # 2025/26
     ("2025-10-01", "Giulia Borghetto", "Swansea", "Simulation Based Inference", "", ""),

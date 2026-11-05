@@ -34,6 +34,7 @@
 
 .slot { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; color: var(--muted); }
 .slot b { color: var(--ink); font-weight: 600; }
+.talk .where { display: block; color: var(--muted); font-size: 0.92rem; }
 .talks { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-width: 50rem; }
 .talk { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding-block: 0.75rem; border-top: 1px solid var(--line); }
 .talk:first-child { border-top: 0; }
@@ -281,7 +282,7 @@
       var affText = aff ? aff.textContent.replace(/^\s*·\s*/, '') : '';
       var when = new Date(first.getAttribute('data-date') + 'T12:00:00')
         .toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-      var slot = next.querySelector('.meta').textContent.split(' · ').slice(1).join(' · ');
+      var slot = first.getAttribute('data-slot') || next.querySelector('.meta').textContent.split(' · ').slice(1).join(' · ');
       next.querySelector('.who').textContent = who.textContent + (affText ? ' (' + affText + ')' : '');
       next.querySelector('.meta').textContent = when + (slot ? ' · ' + slot : '');
       next.setAttribute('data-date', first.getAttribute('data-date'));

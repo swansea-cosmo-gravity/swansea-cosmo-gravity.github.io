@@ -35,7 +35,7 @@ def academic_year(iso):
 
 
 def talk_li(t, show_year=False, tag_upcoming=True):
-    date, who, aff, title, note, link = t
+    date, who, aff, title, note, link, where = (tuple(t) + ("",))[:7]
     title, link = "", ""  # programme lists speakers only
     future = dt.date.fromisoformat(date) >= TODAY
     tags = ""
@@ -47,8 +47,9 @@ def talk_li(t, show_year=False, tag_upcoming=True):
     title_html = (f'<span class="title">{E(title)}</span>' if title
                   else "")
     link_html = f'<a class="paper" href="{E(link)}">Related paper</a>' if link else ""
-    return (f'<li class="talk" data-date="{date}"><span class="when">{fmt_date(date, show_year)}</span>'
-            f'<span><span class="who">{E(who)}</span>{aff_html}{tags}{title_html}{link_html}</span></li>')
+    where_html = f'<span class="where">{E(where)}</span>' if (where and future) else ""
+    return (f'<li class="talk" data-date="{date}" data-slot="{E(where or data.SEMINAR_SLOT)}"><span class="when">{fmt_date(date, show_year)}</span>'
+            f'<span><span class="who">{E(who)}</span>{aff_html}{tags}{title_html}{where_html}{link_html}</span></li>')
 
 
 def build():
@@ -75,7 +76,7 @@ def build():
         aff = f" ({E(n[2])})" if n[2] else ""
         next_html = (f'<div class="next" id="next-talk" data-date="{n[0]}"><span class="label">Next group seminar</span>'
                      f'<span class="who">{E(n[1])}{aff}{title}</span>'
-                     f'<span class="meta">{fmt_date(n[0])} · {E(data.SEMINAR_SLOT)}</span></div>')
+                     f'<span class="meta">{fmt_date(n[0])} · {E((tuple(n) + ("",))[6] or data.SEMINAR_SLOT)}</span></div>')
     else:
         next_html = ""
 
